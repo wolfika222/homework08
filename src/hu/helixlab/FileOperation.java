@@ -8,34 +8,46 @@ import java.io.FileWriter;
  */
 public class FileOperation {
 
-    public static void fileMaker(String path, String out){
+    public static void fileMaker(String path, String out) {
         try {
             FileWriter file = new FileWriter(path + out);
             file.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
 
     }
 
-    public static void fileMaker(String path, int db, String out){
+    public static void fileMaker(String path, int db, String out) {
         try {
-            for (int i = 0; i < db ; i++) {
+            for (int i = 0; i < db; i++) {
                 FileWriter file = new FileWriter(path + i + out);
                 file.close();
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public static void fileMakerWithContent(String path, String out, String content){
+    public static void fileMakerWithContent(String path, String out, String content) {
         try {
             FileWriter file = new FileWriter(path + out);
             file.write(content);
             file.close();
-        }catch (Exception e){
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static void fileMakerWithContent(String path, int db, String out, String content) {
+        try {
+            for (int i = 0; i < db ; i++) {
+                FileWriter file = new FileWriter(path + i + out);
+                file.write(content);
+                file.close();
+            }
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
