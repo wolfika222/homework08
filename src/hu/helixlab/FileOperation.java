@@ -1,6 +1,6 @@
 package hu.helixlab;
 
-import java.io.File;
+
 import java.io.FileWriter;
 
 /**
@@ -16,5 +16,17 @@ public class FileOperation {
             System.out.println(e);
         }
 
+    }
+
+    public static void fileMaker(String path, int db, String out){
+        try {
+            for (int i = 0; i < db ; i++) {
+                FileWriter file = new FileWriter(path + i + out);
+                file.close();
+            }
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 }
