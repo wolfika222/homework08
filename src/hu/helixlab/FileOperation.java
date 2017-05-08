@@ -29,4 +29,14 @@ public class FileOperation {
             System.out.println(e);
         }
     }
+
+    public static void fileMakerWithContent(String path, String out, String content){
+        try {
+            FileWriter file = new FileWriter(path + out);
+            file.write(content);
+            file.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }
